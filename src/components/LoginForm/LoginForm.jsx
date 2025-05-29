@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { selectStoredUan, selectStoredPassword } from "./userSelector";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { login } from "./userSlice"; // adjust as per your project structure
 
 import "react-toastify/dist/ReactToastify.css";
 
 export default function LoginForm() {
   const [uan, setUan] = useState("");
   const [password, setPassword] = useState("");
+    const dispatch = useDispatch();
 
   const storedUan = useSelector(selectStoredUan);
   const storedPassword = useSelector(selectStoredPassword);
@@ -22,12 +24,13 @@ export default function LoginForm() {
       toast.success("Login successful!");
        setTimeout(() => {
       navigate("/home"); // Replace with your actual route
+      dispatch(login());
     }, 2000);
     }
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-50 p-4 pt-30">
+    <div className="flex min-h-screen bg-gray-50 p-4 pt-20">
       {/* Left Panel */}
       <div className="w-3/3 bg-white p-6 rounded-md shadow-md">
         <h2 className="flex-1 bg-teal-600 text-white py-2 pl-4 font-bold rounded-md">
