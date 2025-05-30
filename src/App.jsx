@@ -11,6 +11,7 @@ import UANCard from "./view/uanCard/UANCard";
 import Profile from "./view/profile/profile";
 import ENomaination from "./components/Manage/enomination/enomination";
 import JointDeclaration from "./components/Manage/JointDecleration/JointDeclaration";
+import ChangeContactDetails from "./components/Manage/Contact/ChangeContactDetails";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={ <><Header /> <LoginForm /><Footer /></>} />
+          <Route path="contact-details" element={ <><Header/> <ChangeContactDetails/><Footer/> </> } />
           <Route
             path="/home"
             element={
