@@ -12,6 +12,7 @@ import Profile from "./view/profile/profile";
 import ENomaination from "./components/Manage/enomination/enomination";
 import JointDeclaration from "./components/Manage/JointDecleration/JointDeclaration";
 import ChangeContactDetails from "./components/Manage/Contact/ChangeContactDetails";
+import Kyc from "./components/Manage/Kyc/Kyc";
 
 function App() {
   return (
@@ -20,17 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={ <><Header /> <LoginForm /><Footer /></>} />
           <Route path="contact-details" element={ <><Header/> <ChangeContactDetails/><Footer/> </> } />
-          <Route
-            path="/home"
-            element={
-              <>
-                <Header /> <NavBar />
-                <Footer />
-              </>
-            }
-            g
-          />
-
+          <Route path="/home"element={<><Header /> <NavBar /><Footer /></>}/>
+           <Route path="/kyc"element={<><Header /> <Kyc /><Footer /></>}/>
           <Route
             path="/profile"
             element={
