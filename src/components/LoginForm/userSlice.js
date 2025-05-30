@@ -1,14 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  uan: '123456789012',
-  password: 'password123',
-    username: "King",
+  uan: "123",
+  password: "123",
+  username: "King",
   isLoggedIn: false, // <-- Add isLoggedIn field
 };
 
 const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState,
   reducers: {
     login: (state) => {
@@ -19,5 +19,5 @@ const userSlice = createSlice({
     },
   },
 });
-export const { login, logout } = userSlice.actions
+export const { login, logout } = userSlice.actions;
 export default userSlice.reducer;
