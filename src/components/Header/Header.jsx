@@ -20,7 +20,7 @@ const Header = () => {
  
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 py-4 bg-white bg-opacity-50 shadow-md">
+    <header className="sticky top-0 z-50 w-full flex justify-between items-center px-4 py-4 bg-white bg-opacity-50 shadow-md">
       {/* Left section */}
       <div className="flex items-center">
         <img
