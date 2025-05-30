@@ -9,7 +9,7 @@ const NavBar = () => {
       link: '#',
       dropdown: [
         { name: 'JOINT DECLARATION', link: '/joint-declaration' },
-        { name: 'CONTACT DETAILS', link: '/contact-details' },
+         { name: 'CONTACT DETAILS', link: '/contact-details' },
         { name: 'KYC', link: '/kyc' },
         { name: 'E-NOMINATION', link: '/e-nomination' },
         { name: 'MARK EXIT', link: '/mark-exit' },
@@ -25,8 +25,9 @@ const NavBar = () => {
         { name: "PASSBOOK", link: "/Passbook" },
       ],
     },
+    
   ];
-
+ 
   return (
     <nav className="bg-teal-600 p-3 shadow-md fixed top-24 left-0 w-full z-50">
       <div className="container mx-auto flex items-center justify-start">
@@ -45,7 +46,6 @@ const NavBar = () => {
                   {item.name}
                 </span>
               )}
-
               {item.dropdown && (
                 <ul className="absolute left-0 mt-1 w-[260px] bg-white text-black border border-gray-300 z-20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
                   {item.dropdown.map((dropdownItem) => (
@@ -70,5 +70,5 @@ const NavBar = () => {
     </nav>
   );
 };
-
+ 
 export default NavBar;
