@@ -5,6 +5,17 @@ const NavBar = () => {
   const menuItems = [
     { name: "Home", link: "/" },
     {
+      name: 'Manage',
+      link: '#',
+      dropdown: [
+        { name: 'JOINT DECLARATION', link: '/joint-declaration' },
+        { name: 'CONTACT DETAILS', link: '/contact-details' },
+        { name: 'KYC', link: '/kyc' },
+        { name: 'E-NOMINATION', link: '/e-nomination' },
+        { name: 'MARK EXIT', link: '/mark-exit' },
+      ],
+    },
+    {
       name: "View",
       link: "#",
       dropdown: [
