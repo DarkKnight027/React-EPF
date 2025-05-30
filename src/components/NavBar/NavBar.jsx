@@ -5,6 +5,16 @@ const NavBar = () => {
   const menuItems = [
     { name: "Home", link: "/" },
     {
+      name: "View",
+      link: "#",
+      dropdown: [
+        { name: "PROFILE", link: "/Profile" },
+        { name: "SERVICE HISTORY", link: "/service-history" },
+        { name: "UAN-CARD", link: "/uan-card" },
+        { name: "PASSBOOK", link: "/Passbook" },
+      ],
+    },
+    {
       name: 'Manage',
       link: '#',
       dropdown: [
@@ -15,21 +25,29 @@ const NavBar = () => {
         { name: 'MARK EXIT', link: '/mark-exit' },
       ],
     },
+    
     {
-      name: "View",
-      link: "#",
+      name: 'Account',
+      link: '#',
       dropdown: [
-        { name: "PROFILE", link: "/Profile" },
-        { name: "SERVICE HISTORY", link: "/service-history" },
-        { name: "UAN-CARD", link: "/uan-card" },
-        { name: "PASSBOOK", link: "/Passbook" },
+        { name: 'CHANGE PASSWORD', link: '/Change-password' },
+      ],
+    },
+    {
+      name: 'Online Services',
+      link: '#',
+      dropdown: [
+        { name: 'CLAIM (FORM-31,19,10C&10D)', link: '/claim' },
+        { name: 'ONE MEMBER - ONE EPF ACCOUNT (TRANSFER REQUEST)', link: '/epf-transfer' },
+        { name: 'TRACK CLAIM STATUS', link: '/claim-status' },
+        { name: 'DOWNLOAD ANNEXURE K', link: '/annexure-k' },
       ],
     },
     
   ];
  
   return (
-    <nav className="bg-teal-600 p-3 shadow-md fixed top-24 left-0 w-full z-50">
+    <nav className="bg-teal-600 p-3 shadow-md fixed w-full">
       <div className="container mx-auto flex items-center justify-start">
         <ul className="flex space-x-6 text-white text-base font-medium">
           {menuItems.map((item) => (

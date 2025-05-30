@@ -13,6 +13,7 @@ import ENomaination from "./components/Manage/enomination/enomination";
 import JointDeclaration from "./components/Manage/JointDecleration/JointDeclaration";
 import ChangeContactDetails from "./components/Manage/Contact/ChangeContactDetails";
 import Kyc from "./components/Manage/Kyc/Kyc";
+import CollapsiblePage from './components/OnlineService/OneMember/CollapsiblePage';
 
 function App() {
   return (
@@ -20,14 +21,16 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={ <><Header /> <LoginForm /><Footer /></>} />
-          <Route path="contact-details" element={ <><Header/> <ChangeContactDetails/><Footer/> </> } />
-          <Route path="/home"element={<><Header /> <NavBar /><Footer /></>}/>
-           <Route path="/kyc"element={<><Header /> <Kyc /><Footer /></>}/>
+          <Route path="contact-details" element={ <><Header/><ChangeContactDetails/><Footer/> </> } />
+          <Route path="/home"element={<><Header /><NavBar/><Footer /></>}/>
+           <Route path="/kyc"element={<><Header /><Kyc /><Footer /></>}/>
+           <Route path="/epf-transfer" element={<><CollapsiblePage /></>} />
           <Route
             path="/profile"
             element={
               <>
                 <Header />
+                <NavBar />
                 <Profile />
                 <Footer />
               </>

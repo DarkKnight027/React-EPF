@@ -30,7 +30,7 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-50 p-4 pt-20">
+    <div className="flex min-h-screen bg-gray-50 p-4 pt-15">
       {/* Left Panel */}
       <div className="w-3/3 bg-white p-6 rounded-md shadow-md">
         <h2 className="flex-1 bg-teal-600 text-white py-2 pl-4 font-bold rounded-md">
