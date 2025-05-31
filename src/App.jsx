@@ -12,6 +12,7 @@ import Profile from "./view/profile/profile";
 import ENomaination from "./components/Manage/enomination/enomination";
 import JointDeclaration from "./components/Manage/JointDecleration/JointDeclaration";
 import ChangeContactDetails from "./components/Manage/Contact/ChangeContactDetails";
+import MarkExit from "./components/Manage/MarkExit/MarkExit";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={ <><Header /> <LoginForm /><Footer /></>} />
-          <Route path="contact-details" element={ <><Header/> <ChangeContactDetails/><Footer/> </> } />
+          <Route path="/contact-details" element={ <><Header/> <ChangeContactDetails/><Footer/> </> } />
+           <Route path="/mark-exit" element={ <><Header /> <MarkExit/><Footer /></>} />
           <Route
             path="/home"
             element={
