@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={ <><Header /> <LoginForm /><Footer /></>} />
           <Route path="contact-details" element={ <><Header/> <ChangeContactDetails/><Footer/> </> } />
-           <Route path="/" element={ <><Header /> <MarkExit/><Footer /></>} />
+          <Route path="/mark-exit" element={ <><Header /> <MarkExit/><Footer /></>} />
           <Route
             path="/home"
             element={

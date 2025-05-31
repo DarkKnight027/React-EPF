@@ -31,7 +31,6 @@
     --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-400: oklch(70.7% 0.022 261.325);
-    --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-gray-800: oklch(27.8% 0.033 256.848);
@@ -292,9 +291,6 @@
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
-  .mt-10 {
-    margin-top: calc(var(--spacing) * 10);
-  }
   .mt-12 {
     margin-top: calc(var(--spacing) * 12);
   }
@@ -343,9 +339,6 @@
   .h-4 {
     height: calc(var(--spacing) * 4);
   }
-  .h-5 {
-    height: calc(var(--spacing) * 5);
-  }
   .h-12 {
     height: calc(var(--spacing) * 12);
   }
@@ -366,9 +359,6 @@
   }
   .w-4 {
     width: calc(var(--spacing) * 4);
-  }
-  .w-5 {
-    width: calc(var(--spacing) * 5);
   }
   .w-24 {
     width: calc(var(--spacing) * 24);
@@ -461,22 +451,8 @@
       margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
-  .space-y-4 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
   .gap-x-20 {
     column-gap: calc(var(--spacing) * 20);
-  }
-  .space-x-2 {
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
-    }
   }
   .space-x-4 {
     :where(& > :not(:last-child)) {
@@ -494,15 +470,6 @@
   }
   .gap-y-8 {
     row-gap: calc(var(--spacing) * 8);
-  }
-  .overflow-auto {
-    overflow: auto;
-  }
-  .overflow-hidden {
-    overflow: hidden;
-  }
-  .overflow-x-auto {
-    overflow-x: auto;
   }
   .rounded {
     border-radius: 0.25rem;
@@ -539,18 +506,11 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
-  .border-b-2 {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 2px;
-  }
   .border-\[\#208b50\] {
     border-color: #208b50;
   }
   .border-\[\#cccccc\] {
     border-color: #cccccc;
-  }
-  .border-blue-300 {
-    border-color: var(--color-blue-300);
   }
   .border-gray-100 {
     border-color: var(--color-gray-100);
@@ -579,20 +539,11 @@
   .bg-\[\#e6ffe6\] {
     background-color: #e6ffe6;
   }
-  .bg-\[\#fdf8e4\] {
-    background-color: #fdf8e4;
-  }
-  .bg-blue-100 {
-    background-color: var(--color-blue-100);
-  }
-  .bg-blue-800 {
-    background-color: var(--color-blue-800);
+  .bg-\[\#f0f4f7\] {
+    background-color: #f0f4f7;
   }
   .bg-gray-50 {
     background-color: var(--color-gray-50);
-  }
-  .bg-gray-100 {
-    background-color: var(--color-gray-100);
   }
   .bg-green-600 {
     background-color: var(--color-green-600);
@@ -645,23 +596,17 @@
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
   }
-  .py-6 {
-    padding-block: calc(var(--spacing) * 6);
-  }
   .py-\[0\.1rem\] {
     padding-block: 0.1rem;
   }
-  .py-\[6px\] {
-    padding-block: 6px;
+  .pt-0 {
+    padding-top: calc(var(--spacing) * 0);
   }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
   }
   .pt-20 {
     padding-top: calc(var(--spacing) * 20);
-  }
-  .pb-2 {
-    padding-bottom: calc(var(--spacing) * 2);
   }
   .pb-16 {
     padding-bottom: calc(var(--spacing) * 16);
@@ -705,9 +650,6 @@
   .text-\[0\.6rem\] {
     font-size: 0.6rem;
   }
-  .text-\[15px\] {
-    font-size: 15px;
-  }
   .text-\[16px\] {
     font-size: 16px;
   }
@@ -738,21 +680,12 @@
     --tw-tracking: var(--tracking-tight);
     letter-spacing: var(--tracking-tight);
   }
-  .whitespace-nowrap {
-    white-space: nowrap;
-  }
   .text-\[\#4a4a4a\] {
     color: #4a4a4a;
   }
   .text-\[\#6b6b6b\] {
     color: #6b6b6b;
   }
-<<<<<<< Updated upstream
-  .text-\[\#7a5900\] {
-    color: #7a5900;
-  }
-=======
->>>>>>> Stashed changes
   .text-\[\#8a8a8a\] {
     color: #8a8a8a;
   }
@@ -792,12 +725,6 @@
   .text-gray-400 {
     color: var(--color-gray-400);
   }
-<<<<<<< Updated upstream
-  .text-gray-500 {
-    color: var(--color-gray-500);
-  }
-=======
->>>>>>> Stashed changes
   .text-gray-600 {
     color: var(--color-gray-600);
   }
