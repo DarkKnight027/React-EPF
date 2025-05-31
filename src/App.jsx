@@ -16,6 +16,7 @@ import Kyc from "./components/Manage/Kyc/Kyc";
 import CollapsiblePage from './components/OnlineService/OneMember/CollapsiblePage';
 import ChangePassword from "./components/Account/ChangePassword";
 import Claim from "./components/OnlineService/Claim/Claim";
+import MarkExit from "./components/Manage/MarkExit/MarkExit";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={ <><Header /> <LoginForm /><Footer /></>} />
           <Route path="/Change-password" element={ <><Header /> <ChangePassword/><Footer /></>} />
            <Route path="/claim" element={ <><Header /> <Claim/><Footer /></>} />
+           <Route path="/mark-exit" element={ <><Header /> <MarkExit/><Footer /></>} />
 
           <Route path="contact-details" element={ <><Header/><ChangeContactDetails/><Footer/> </> } />
           <Route path="/home"element={<><Header /><NavBar/><Footer /></>}/>
