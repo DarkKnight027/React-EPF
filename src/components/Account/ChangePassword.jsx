@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updatePassword } from "../LoginForm/userSlice";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function ChangePassword() {
@@ -17,6 +18,7 @@ export default function ChangePassword() {
 
   const currentPassword = useSelector((state) => state.user.password);
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // ← useNavigate to redirect
 
   const rules = {
     length: newPassword.length >= 6,
@@ -55,6 +57,11 @@ export default function ChangePassword() {
       setConfirmPassword("");
       setAadhaarConsent(false);
       toast.success("Password reset successfully.");
+
+      // Redirect to Login Page after short delay
+      setTimeout(() => {
+        navigate("/"); // Redirecting to login form route
+      }, 1500);
     }
   };
 
@@ -77,33 +84,31 @@ export default function ChangePassword() {
         {isOpen && (
           <div className="w-full bg-white px-6 py-6 border border-black rounded-b-lg shadow">
             <div className="space-y-6 max-w-3xl mx-auto">
-              {[
-                {
-                  label: "Old Password",
-                  value: oldPassword,
-                  onChange: setOldPassword,
-                  show: showOld,
-                  toggleShow: () => setShowOld(!showOld),
-                  placeholder: "Old Password",
-                },
-                {
-                  label: "New Password",
-                  value: newPassword,
-                  onChange: setNewPassword,
-                  show: showNew,
-                  toggleShow: () => setShowNew(!showNew),
-                  placeholder: "New Password",
-                  isNewPassword: true,
-                },
-                {
-                  label: "Confirm Password",
-                  value: confirmPassword,
-                  onChange: setConfirmPassword,
-                  show: showConfirm,
-                  toggleShow: () => setShowConfirm(!showConfirm),
-                  placeholder: "Confirm Password",
-                },
-              ].map((field, idx) => (
+              {[{
+                label: "Old Password",
+                value: oldPassword,
+                onChange: setOldPassword,
+                show: showOld,
+                toggleShow: () => setShowOld(!showOld),
+                placeholder: "Old Password",
+              },
+              {
+                label: "New Password",
+                value: newPassword,
+                onChange: setNewPassword,
+                show: showNew,
+                toggleShow: () => setShowNew(!showNew),
+                placeholder: "New Password",
+                isNewPassword: true,
+              },
+              {
+                label: "Confirm Password",
+                value: confirmPassword,
+                onChange: setConfirmPassword,
+                show: showConfirm,
+                toggleShow: () => setShowConfirm(!showConfirm),
+                placeholder: "Confirm Password",
+              }].map((field, idx) => (
                 <div key={idx} className="flex flex-col">
                   <div className="flex items-center justify-center gap-4">
                     <label className="w-48 font-bold text-black text-right">
@@ -136,15 +141,12 @@ export default function ChangePassword() {
                             uppercase: "At least one uppercase letter",
                             lowercase: "At least one lowercase letter",
                             number: "At least one number",
-                            special:
-                              "At least one special character (@, #, $, etc.)",
+                            special: "At least one special character (@, #, $, etc.)",
                           };
                           return (
                             <div
                               key={key}
-                              className={`flex justify-between ${
-                                isValid ? "text-green-600" : "text-red-600"
-                              }`}
+                              className={`flex justify-between ${isValid ? "text-green-600" : "text-red-600"}`}
                             >
                               <span>{descriptions[key]}</span>
                               {!isValid && <span className="font-bold">✖</span>}
