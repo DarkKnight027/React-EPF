@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updatePassword } from "../LoginForm/userSlice";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ChangePassword() {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,10 +59,10 @@ export default function ChangePassword() {
   };
 
   return (
-    <div className="p-3 shadow-md fixed top-24 left-0 w-full z-50 min-h-screen bg-white px-2 py-6">
+    <div className="p-3 shadow-md fixed top-22 left-0 w-full z-50 h-[72vh] overflow-auto bg-white px-2 py-6">
       <div className="mx-4">
-        <div className="flex justify-between items-center bg-white border border-black rounded-t-lg shadow px-6 py-3">
-          <div className="flex items-center space-x-2 text-yellow-700 font-semibold text-[15px] uppercase tracking-wide">
+        <div className="flex justify-between items-center bg-gray-100 border border-black rounded-t-lg shadow px-6 py-3">
+          <div className="flex items-center space-x-2 text-blue-700 font-semibold text-[15px] uppercase tracking-wide">
             <span className="text-xl">≡</span>
             <span>Change Password</span>
           </div>
@@ -136,12 +136,15 @@ export default function ChangePassword() {
                             uppercase: "At least one uppercase letter",
                             lowercase: "At least one lowercase letter",
                             number: "At least one number",
-                            special: "At least one special character (@, #, $, etc.)",
+                            special:
+                              "At least one special character (@, #, $, etc.)",
                           };
                           return (
                             <div
                               key={key}
-                              className={`flex justify-between ${isValid ? "text-green-600" : "text-red-600"}`}
+                              className={`flex justify-between ${
+                                isValid ? "text-green-600" : "text-red-600"
+                              }`}
                             >
                               <span>{descriptions[key]}</span>
                               {!isValid && <span className="font-bold">✖</span>}
@@ -170,10 +173,13 @@ export default function ChangePassword() {
                     onChange={() => setAadhaarConsent(!aadhaarConsent)}
                   />
                   <span>
-                    मैं पासवर्ड रीसेट करने के लिए अपनी पहचान स्थापित करने के उद्देश्य से आधार प्रमाणिकरण के लिए अपना आधार नंबर, वन टाइम पिन (ओटीपी) डेटा प्रदान करने की सहमति देता हूँ।
+                    मैं पासवर्ड रीसेट करने के लिए अपनी पहचान स्थापित करने के
+                    उद्देश्य से आधार प्रमाणिकरण के लिए अपना आधार नंबर, वन टाइम
+                    पिन (ओटीपी) डेटा प्रदान करने की सहमति देता हूँ।
                     <br />
                     <strong>
-                      I hereby consent to provide my Aadhaar Number, One Time Pin (OTP)...
+                      I hereby consent to provide my Aadhaar Number, One Time
+                      Pin (OTP)...
                     </strong>
                   </span>
                 </label>

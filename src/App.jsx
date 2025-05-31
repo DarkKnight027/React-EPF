@@ -16,6 +16,8 @@ import Kyc from "./components/Manage/Kyc/Kyc";
 import CollapsiblePage from './components/OnlineService/OneMember/CollapsiblePage';
 import ChangePassword from "./components/Account/ChangePassword";
 import Claim from "./components/OnlineService/Claim/Claim";
+import TrackClaimStatus from "./components/OnlineService/TrackClaimStatus/TrackClaimStatus";
+import Annexure from "./components/OnlineService/Annexure/Annexure";
 
 function App() {
   return (
@@ -25,7 +27,8 @@ function App() {
           <Route path="/" element={ <><Header /> <LoginForm /><Footer /></>} />
           <Route path="/Change-password" element={ <><Header /> <ChangePassword/><Footer /></>} />
            <Route path="/claim" element={ <><Header /> <Claim/><Footer /></>} />
-
+           <Route path="/claim-status" element={ <><Header /> <TrackClaimStatus/><Footer /></>} />
+           <Route path="/annexure-k" element={ <><Header /> <Annexure/><Footer /></>} />
           <Route path="contact-details" element={ <><Header/><ChangeContactDetails/><Footer/> </> } />
           <Route path="/home"element={<><Header /><NavBar/><Footer /></>}/>
            <Route path="/kyc"element={<><Header /><Kyc /><Footer /></>}/>
