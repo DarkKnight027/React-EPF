@@ -14,6 +14,8 @@ import JointDeclaration from "./components/Manage/JointDecleration/JointDeclarat
 import ChangeContactDetails from "./components/Manage/Contact/ChangeContactDetails";
 import Kyc from "./components/Manage/Kyc/Kyc";
 import CollapsiblePage from './components/OnlineService/OneMember/CollapsiblePage';
+import ChangePassword from "./components/Account/ChangePassword";
+import Claim from "./components/OnlineService/Claim/Claim";
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={ <><Header /> <LoginForm /><Footer /></>} />
+          <Route path="/Change-password" element={ <><Header /> <ChangePassword/><Footer /></>} />
+           <Route path="/claim" element={ <><Header /> <Claim/><Footer /></>} />
+
           <Route path="contact-details" element={ <><Header/><ChangeContactDetails/><Footer/> </> } />
           <Route path="/home"element={<><Header /><NavBar/><Footer /></>}/>
            <Route path="/kyc"element={<><Header /><Kyc /><Footer /></>}/>
