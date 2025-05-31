@@ -352,6 +352,9 @@
   .h-24 {
     height: calc(var(--spacing) * 24);
   }
+  .min-h-\[350px\] {
+    min-height: 350px;
+  }
   .min-h-screen {
     min-height: 100vh;
   }
@@ -744,9 +747,12 @@
   .text-\[\#6b6b6b\] {
     color: #6b6b6b;
   }
+<<<<<<< Updated upstream
   .text-\[\#7a5900\] {
     color: #7a5900;
   }
+=======
+>>>>>>> Stashed changes
   .text-\[\#8a8a8a\] {
     color: #8a8a8a;
   }
@@ -786,9 +792,12 @@
   .text-gray-400 {
     color: var(--color-gray-400);
   }
+<<<<<<< Updated upstream
   .text-gray-500 {
     color: var(--color-gray-500);
   }
+=======
+>>>>>>> Stashed changes
   .text-gray-600 {
     color: var(--color-gray-600);
   }

@@ -1,28 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+ 
 const NavBar = () => {
   const menuItems = [
-    { name: "Home", link: "/" },
+    { name: 'Home', link: '/' },
+    
     {
       name: 'Manage',
       link: '#',
       dropdown: [
         { name: 'JOINT DECLARATION', link: '/joint-declaration' },
-         { name: 'CONTACT DETAILS', link: '/contact-details' },
+        { name: 'CONTACT DETAILS', link: '/contact-details' },
         { name: 'KYC', link: '/kyc' },
         { name: 'E-NOMINATION', link: '/e-nomination' },
         { name: 'MARK EXIT', link: '/mark-exit' },
-      ],
-    },
-    {
-      name: "View",
-      link: "#",
-      dropdown: [
-        { name: "PROFILE", link: "/Profile" },
-        { name: "SERVICE HISTORY", link: "/service-history" },
-        { name: "UAN-CARD", link: "/uan-card" },
-        { name: "PASSBOOK", link: "/Passbook" },
       ],
     },
     
@@ -34,7 +25,7 @@ const NavBar = () => {
         <ul className="flex space-x-6 text-white text-base font-medium">
           {menuItems.map((item) => (
             <li key={item.name} className="relative group">
-              {item.link !== "#" ? (
+              {item.link !== '#' ? (
                 <Link
                   to={item.link}
                   className="hover:text-teal-100 focus:outline-none"
@@ -46,6 +37,7 @@ const NavBar = () => {
                   {item.name}
                 </span>
               )}
+ 
               {item.dropdown && (
                 <ul className="absolute left-0 mt-1 w-[260px] bg-white text-black border border-gray-300 z-20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
                   {item.dropdown.map((dropdownItem) => (

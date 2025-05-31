@@ -1,9 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+<<<<<<< Updated upstream
   uan: "123",
   password: "123",
   username: "King",
+=======
+  uan: '123456789012',
+  password: '123123     ',
+    username: "King",
+>>>>>>> Stashed changes
   isLoggedIn: false, // <-- Add isLoggedIn field
 };
 
