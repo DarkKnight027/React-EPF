@@ -13,7 +13,7 @@ import ENomaination from "./components/Manage/enomination/enomination";
 import JointDeclaration from "./components/Manage/JointDecleration/JointDeclaration";
 import ChangeContactDetails from "./components/Manage/Contact/ChangeContactDetails";
 import Kyc from "./components/Manage/Kyc/Kyc";
-import CollapsiblePage from './components/OnlineService/OneMember/CollapsiblePage';
+import CollapsiblePage from "./components/OnlineService/OneMember/CollapsiblePage";
 import ChangePassword from "./components/Account/ChangePassword";
 import Claim from "./components/OnlineService/Claim/Claim";
 import MarkExit from "./components/Manage/MarkExit/MarkExit";
@@ -25,16 +25,99 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={ <><Header /> <LoginForm /><Footer /></>} />
-          <Route path="/Change-password" element={ <><Header /> <ChangePassword/><Footer /></>} />
-           <Route path="/claim" element={ <><Header /> <Claim/><Footer /></>} />
-           <Route path="/mark-exit" element={ <><Header /> <MarkExit/><Footer /></>} />
-           <Route path="/claim-status" element={ <><Header /> <TrackClaimStatus/><Footer /></>} />
-           <Route path="/annexure-k" element={ <><Header /> <Annexure/><Footer /></>} />
-          <Route path="contact-details" element={ <><Header/><ChangeContactDetails/><Footer/> </> } />
-          <Route path="/home"element={<><Header /><NavBar/><Footer /></>}/>
-           <Route path="/kyc"element={<><Header /><Kyc /><Footer /></>}/>
-           <Route path="/epf-transfer" element={<><CollapsiblePage /></>} />
+          <Route
+            path="/"
+            element={
+              <>
+                <Header /> <LoginForm />
+                <Footer />
+              </>
+            }
+          />
+           <Route path="/login" element={<><Header /><LoginForm/><Footer /></>} />
+          <Route
+            path="/Change-password"
+            element={
+              <>
+                <Header /> <ChangePassword />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/claim"
+            element={
+              <>
+                <Header /> <Claim />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/mark-exit"
+            element={
+              <>
+                <Header /> <MarkExit />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/claim-status"
+            element={
+              <>
+                <Header /> <TrackClaimStatus />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/annexure-k"
+            element={
+              <>
+                <Header /> <Annexure />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="contact-details"
+            element={
+              <>
+                <Header />
+                <ChangeContactDetails />
+                <Footer />{" "}
+              </>
+            }
+          />
+          <Route
+            path="/home"
+            element={
+              <>
+                <Header />
+                <NavBar />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/kyc"
+            element={
+              <>
+                <Header />
+                <Kyc />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/epf-transfer"
+            element={
+              <>
+                <CollapsiblePage />
+              </>
+            }
+          />
           <Route
             path="/profile"
             element={
@@ -76,7 +159,7 @@ function App() {
               </>
             }
           />
-           <Route
+          <Route
             path="/e-nomination"
             element={
               <>
@@ -86,12 +169,12 @@ function App() {
               </>
             }
           />
-           <Route
+          <Route
             path="/joint-declaration"
             element={
               <>
                 <Header />
-                <JointDeclaration/>
+                <JointDeclaration />
                 <Footer />
               </>
             }
