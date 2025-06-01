@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updatePassword } from "../LoginForm/userSlice";
+import {logout, updatePassword } from "../LoginForm/userSlice";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
-
+ 
 export default function ChangePassword() {
   const [isOpen, setIsOpen] = useState(false);
   const [oldPassword, setOldPassword] = useState("");
@@ -15,11 +15,11 @@ export default function ChangePassword() {
   const [showConfirm, setShowConfirm] = useState(false);
   const [aadhaarConsent, setAadhaarConsent] = useState(false);
   const [error, setError] = useState("");
-
+ 
   const currentPassword = useSelector((state) => state.user.password);
   const dispatch = useDispatch();
   const navigate = useNavigate(); // ← useNavigate to redirect
-
+ 
   const rules = {
     length: newPassword.length >= 6,
     uppercase: /[A-Z]/.test(newPassword),
@@ -27,44 +27,49 @@ export default function ChangePassword() {
     number: /\d/.test(newPassword),
     special: /[@#$%^&+=!]/.test(newPassword),
   };
-
+ 
   const handleReset = () => {
-    if (!oldPassword || !newPassword || !confirmPassword) {
-      setError("All fields are required.");
-      toast.error("Please fill all fields.");
-      return;
-    }
-
-    if (oldPassword !== currentPassword) {
-      setError("Old password is incorrect.");
-      toast.error("Old password is incorrect.");
-      return;
-    }
-
-    if (!Object.values(rules).every(Boolean)) {
-      setError(
-        "Password must include uppercase, lowercase, number, special character and be at least 6 characters."
-      );
-      toast.error("Password policy not satisfied.");
-    } else if (newPassword !== confirmPassword) {
-      setError("Passwords do not match");
-      toast.error("Passwords do not match.");
-    } else {
-      dispatch(updatePassword(newPassword));
-      setError("");
-      setOldPassword("");
-      setNewPassword("");
-      setConfirmPassword("");
-      setAadhaarConsent(false);
-      toast.success("Password reset successfully.");
-
-      // Redirect to Login Page after short delay
-      setTimeout(() => {
-        navigate("/"); // Redirecting to login form route
-      }, 1500);
-    }
-  };
-
+  if (!oldPassword || !newPassword || !confirmPassword) {
+    setError("All fields are required.");
+    toast.error("Please fill all fields.");
+    return;
+  }
+ 
+  if (oldPassword !== currentPassword) {
+    setError("Old password is incorrect.");
+    toast.error("Old password is incorrect.");
+    return;
+  }
+ 
+  if (!Object.values(rules).every(Boolean)) {
+    setError(
+      "Password must include uppercase, lowercase, number, special character and be at least 6 characters."
+    );
+    toast.error("Password policy not satisfied.");
+  } else if (newPassword !== confirmPassword) {
+    setError("Passwords do not match");
+    toast.error("Passwords do not match.");
+  } else {
+    dispatch(updatePassword(newPassword));
+    toast.success("Password reset successfully. Logging out...");
+ 
+    // Optional: Clear form
+    setError("");
+    setOldPassword("");
+    setNewPassword("");
+    setConfirmPassword("");
+    setAadhaarConsent(false);
+ 
+    // Delay to show success toast before redirecting
+    setTimeout(() => {
+      dispatch(logout());        // Optional: Clear user state
+      navigate("/login");        // Redirect to login page
+    }, 2000); // 2 seconds delay
+  }
+};
+ 
+ 
+ 
   return (
     <div className="p-3 shadow-md fixed top-22 left-0 w-full z-50 h-[72vh] overflow-auto bg-white px-2 py-6">
       <div className="mx-4">
@@ -80,7 +85,7 @@ export default function ChangePassword() {
             {isOpen ? "−" : "+"}
           </button>
         </div>
-
+ 
         {isOpen && (
           <div className="w-full bg-white px-6 py-6 border border-black rounded-b-lg shadow">
             <div className="space-y-6 max-w-3xl mx-auto">
@@ -131,7 +136,7 @@ export default function ChangePassword() {
                       </button>
                     </div>
                   </div>
-
+ 
                   {field.isNewPassword && newPassword.length > 0 && (
                     <div className="flex justify-center mt-2">
                       <div className="grid grid-cols-1 w-[90%] max-w-xl text-xs space-y-1">
@@ -158,13 +163,13 @@ export default function ChangePassword() {
                   )}
                 </div>
               ))}
-
+ 
               {error && (
                 <div className="text-red-600 font-semibold text-center mt-2">
                   {error}
                 </div>
               )}
-
+ 
               {/* Consent box */}
               <div className="bg-blue-50 border border-blue-300 p-4 rounded text-sm mt-6 max-w-full mx-auto">
                 <label className="flex items-start space-x-2">
@@ -189,7 +194,7 @@ export default function ChangePassword() {
                   Version: [ Fri 23, May 2025 (PV 4.1.4) ]
                 </p>
               </div>
-
+ 
               {/* Buttons */}
               <div className="flex justify-center gap-4 mt-6">
                 <button className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded text-sm font-semibold">
