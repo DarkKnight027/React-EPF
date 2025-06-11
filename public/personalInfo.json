@@ -1,9 +1,43 @@
 {
+  "personalInfo": {
     "name": "Team React",
     "mobile": "9876543210",
     "email": "reactXXXX@gmail.com",
     "bankAccount": "1234567XXXX",
     "ifsc": "REACT0050083",
     "aadhaar": "XXXX XXXX 1234"
+  },
+  "claimStatus": [
+    {
+      "trackingId": "20250601012345001",
+      "formType": "Form-19",
+      "submittedAt": "31-May-2025 02:45 PM",
+      "sentToFieldOffice": "31-May-2025 06:00 PM",
+      "status": "Pending Verification"
+    },
+    {
+      "trackingId": "20250601123456002",
+      "formType": "Form-10C",
+      "submittedAt": "30-May-2025 09:15 AM",
+      "sentToFieldOffice": "30-May-2025 11:00 AM",
+      "status": "Claim Settled"
+    }
+  ],
+  "claimFormData": {
+    "employeeName": "Team React",
+    "fatherHusbandName": "React Father",
+    "dob": "1990-01-01",
+    "mobile": "9876543210",
+    "aadhaar": "XXXX XXXX 1234",
+    "pan": "REACT1234A",
+    "bankAccount": "1234567XXXX",
+    "ifsCode": "REACT0050083",
+    "branchNameAddress": "REACT Bank Branch, City",
+    "memberId": "REACT9876543210",
+    "dojEpf": "2015-06-01",
+    "dojEps": "2015-06-01",
+    "doeEpf": "2024-12-31",
+    "doeEps": "2024-12-31",
+    "reasonOfLeaving": "Resigned"
   }
-  
+}

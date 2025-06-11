@@ -39,7 +39,7 @@ function App() {
             path="/Change-password"
             element={
               <>
-                <Header /> <ChangePassword />
+                <Header /><NavBar /> <ChangePassword />
                 <Footer />
               </>
             }
@@ -48,7 +48,7 @@ function App() {
             path="/claim"
             element={
               <>
-                <Header /> <Claim />
+                <Header /><NavBar /> <Claim />
                 <Footer />
               </>
             }
@@ -66,7 +66,7 @@ function App() {
             path="/claim-status"
             element={
               <>
-                <Header /> <TrackClaimStatus />
+                <Header /><NavBar /> <TrackClaimStatus />
                 <Footer />
               </>
             }
@@ -75,7 +75,7 @@ function App() {
             path="/annexure-k"
             element={
               <>
-                <Header /> <Annexure />
+                <Header /><NavBar /> <Annexure />
                 <Footer />
               </>
             }
