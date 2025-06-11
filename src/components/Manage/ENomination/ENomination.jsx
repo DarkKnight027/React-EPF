@@ -1,31 +1,41 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const ENomaination = () => {
+const ENomination = () => {
+  const nominations = useSelector((state) => state.eNomination.nominations);
+
+  useEffect(() => {
+    toast.info("e-Nomination is not mandatory for filing of advance claim.", {
+      position: "top-right",
+      autoClose: 1000,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
+  }, []);
+
   return (
-    <div className="p-3 shadow-md fixed top-24 left-0 w-full z-50">
+    <div className="p-3 shadow-md mt-12 w-full">
+      <ToastContainer />
       <div className="bg-white border shadow-sm rounded-md p-4 space-y-4">
-        {/* Alert */}
-        <p className="text-red-600 text-sm font-medium">
-          e-Nomination is not mandatory for filing of advance claim.
-        </p>
 
-        {/* Enter Link */}
         <a href="#" className="text-blue-600 text-sm font-medium hover:underline">
           Enter New e-Nomination
         </a>
 
-        {/* Table Section */}
         <h2 className="text-gray-700 font-semibold text-base border-b pb-2">e-Nomination History</h2>
 
         {/* Controls */}
         <div className="flex justify-between items-center text-sm">
           <div className="flex items-center space-x-2">
-            <label>Display</label>&nbsp;&nbsp;
-            <select className="border rounded px- py-1 text-sm">
+            <label>Display</label>
+            <select className="border rounded px-2 py-1 text-sm">
               <option>10</option>
               <option>25</option>
               <option>50</option>
-            </select>&nbsp;&nbsp;
+            </select>
             <span>records per page</span>
           </div>
           <input
@@ -47,31 +57,26 @@ const ENomaination = () => {
               </tr>
             </thead>
             <tbody className="text-gray-800">
-              <tr className="border-t">
-                <td className="px-3 py-2 border-r">1</td>
-                <td className="px-3 py-2 border-r font-medium text-green-600">
-                  Nomination Successful
-                </td>
-                <td className="px-3 py-2 border-r">
-                  {/* Icon removed */}
-                </td>
-                <td className="px-3 py-2">30-NOV-2023 17:50</td>
-              </tr>
+              {nominations.map((item, index) => (
+                <tr key={item.id} className="border-t">
+                  <td className="px-3 py-2 border-r">{index + 1}</td>
+                  <td className={`px-3 py-2 border-r font-medium ${item.status.includes('Successful') ? 'text-green-600' : item.status.includes('Rejected') ? 'text-red-600' : 'text-yellow-600'}`}>
+                    {item.status}
+                  </td>
+                  <td className="px-3 py-2 border-r">{item.details}</td>
+                  <td className="px-3 py-2">{item.dateTime}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
 
-        {/* Pagination */}
         <div className="text-sm text-gray-600 mt-2 flex justify-between items-center">
           <span>Showing page 1 of 1</span>
-          <div className="flex items-center space-x-2">
-           
-            
-          </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ENomaination
+export default ENomination;

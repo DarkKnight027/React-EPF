@@ -105,6 +105,7 @@ function App() {
             element={
               <>
                 <Header />
+                <NavBar />
                 <Kyc />
                 <Footer />
               </>
@@ -164,6 +165,7 @@ function App() {
             element={
               <>
                 <Header />
+                <NavBar />
                 <ENomaination />
                 <Footer />
               </>
@@ -174,6 +176,7 @@ function App() {
             element={
               <>
                 <Header />
+                <NavBar />
                 <JointDeclaration />
                 <Footer />
               </>
