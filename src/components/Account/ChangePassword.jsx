@@ -71,7 +71,7 @@ export default function ChangePassword() {
  
  
   return (
-    <div className="p-3 shadow-md fixed top-22 left-0 w-full z-50 h-[72vh] overflow-auto bg-white px-2 py-6">
+    <div className="p-3 shadow-md mt-12 w-full">
       <div className="mx-4">
         <div className="flex justify-between items-center bg-gray-100 border border-black rounded-t-lg shadow px-6 py-3">
           <div className="flex items-center space-x-2 text-blue-700 font-semibold text-[15px] uppercase tracking-wide">
