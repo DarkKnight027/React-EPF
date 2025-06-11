@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updatePassword } from "../LoginForm/userSlice";
+import {logout, updatePassword } from "../LoginForm/userSlice";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
@@ -29,41 +29,46 @@ export default function ChangePassword() {
   };
 
   const handleReset = () => {
-    if (!oldPassword || !newPassword || !confirmPassword) {
-      setError("All fields are required.");
-      toast.error("Please fill all fields.");
-      return;
-    }
+  if (!oldPassword || !newPassword || !confirmPassword) {
+    setError("All fields are required.");
+    toast.error("Please fill all fields.");
+    return;
+  }
 
-    if (oldPassword !== currentPassword) {
-      setError("Old password is incorrect.");
-      toast.error("Old password is incorrect.");
-      return;
-    }
+  if (oldPassword !== currentPassword) {
+    setError("Old password is incorrect.");
+    toast.error("Old password is incorrect.");
+    return;
+  }
 
-    if (!Object.values(rules).every(Boolean)) {
-      setError(
-        "Password must include uppercase, lowercase, number, special character and be at least 6 characters."
-      );
-      toast.error("Password policy not satisfied.");
-    } else if (newPassword !== confirmPassword) {
-      setError("Passwords do not match");
-      toast.error("Passwords do not match.");
-    } else {
-      dispatch(updatePassword(newPassword));
-      setError("");
-      setOldPassword("");
-      setNewPassword("");
-      setConfirmPassword("");
-      setAadhaarConsent(false);
-      toast.success("Password reset successfully.");
+  if (!Object.values(rules).every(Boolean)) {
+    setError(
+      "Password must include uppercase, lowercase, number, special character and be at least 6 characters."
+    );
+    toast.error("Password policy not satisfied.");
+  } else if (newPassword !== confirmPassword) {
+    setError("Passwords do not match");
+    toast.error("Passwords do not match.");
+  } else {
+    dispatch(updatePassword(newPassword));
+    toast.success("Password reset successfully. Logging out...");
 
-      // Redirect to Login Page after short delay
-      setTimeout(() => {
-        navigate("/"); // Redirecting to login form route
-      }, 1500);
-    }
-  };
+    // Optional: Clear form
+    setError("");
+    setOldPassword("");
+    setNewPassword("");
+    setConfirmPassword("");
+    setAadhaarConsent(false);
+
+    // Delay to show success toast before redirecting
+    setTimeout(() => {
+      dispatch(logout());        // Optional: Clear user state
+      navigate("/login");        // Redirect to login page
+    }, 2000); // 2 seconds delay
+  }
+};
+
+
 
   return (
     <div className="p-3 shadow-md fixed top-22 left-0 w-full z-50 h-[72vh] overflow-auto bg-white px-2 py-6">

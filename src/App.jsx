@@ -26,6 +26,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={ <><Header /> <LoginForm /><Footer /></>} />
+           <Route path="/login" element={<><Header /><LoginForm/><Footer /></>} />
           <Route path="/Change-password" element={ <><Header /> <ChangePassword/><Footer /></>} />
            <Route path="/claim" element={ <><Header /> <Claim/><Footer /></>} />
            <Route path="/mark-exit" element={ <><Header /> <MarkExit/><Footer /></>} />
@@ -33,7 +34,7 @@ function App() {
            <Route path="/annexure-k" element={ <><Header /> <Annexure/><Footer /></>} />
           <Route path="contact-details" element={ <><Header/><ChangeContactDetails/><Footer/> </> } />
           <Route path="/home"element={<><Header /><NavBar/><Footer /></>}/>
-           <Route path="/kyc"element={<><Header /><Kyc /><Footer /></>}/>
+           <Route path="/kyc"element={<><Header /><NavBar /><Kyc /><Footer /></>}/>
            <Route path="/epf-transfer" element={<><CollapsiblePage /></>} />
           <Route
             path="/profile"
@@ -81,6 +82,7 @@ function App() {
             element={
               <>
                 <Header />
+                <NavBar />
                 <ENomaination />
                 <Footer />
               </>
@@ -91,6 +93,7 @@ function App() {
             element={
               <>
                 <Header />
+                <NavBar />
                 <JointDeclaration/>
                 <Footer />
               </>

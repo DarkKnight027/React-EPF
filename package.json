@@ -12,6 +12,8 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "@tailwindcss/cli": "^4.1.7",
+    "ag-grid-community": "^33.3.1",
+    "ag-grid-react": "^33.3.1",
     "lucide-react": "^0.511.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
