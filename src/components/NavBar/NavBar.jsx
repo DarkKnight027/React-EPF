@@ -9,43 +9,43 @@ const NavBar = () => {
       link: "#",
       dropdown: [
         { name: "PROFILE", link: "/Profile" },
-        { name: "SERVICE HISTORY", link: "/service-history" },
+        { name: "SERVICE-HISTORY", link: "/service-history" },
         { name: "UAN-CARD", link: "/uan-card" },
         { name: "PASSBOOK", link: "/Passbook" },
       ],
     },
     {
-      name: 'Manage',
-      link: '#',
+      name: "Manage",
+      link: "#",
       dropdown: [
-        { name: 'JOINT DECLARATION', link: '/joint-declaration' },
-         { name: 'CONTACT DETAILS', link: '/contact-details' },
-        { name: 'KYC', link: '/kyc' },
-        { name: 'E-NOMINATION', link: '/e-nomination' },
-        { name: 'MARK EXIT', link: '/mark-exit' },
+        { name: "JOINT DECLARATION", link: "/joint-declaration" },
+        { name: "CONTACT DETAILS", link: "/contact-details" },
+        { name: "KYC", link: "/kyc" },
+        { name: "E-NOMINATION", link: "/e-nomination" },
+        { name: "MARK EXIT", link: "/mark-exit" },
       ],
     },
-    
+
     {
-      name: 'Account',
-      link: '#',
-      dropdown: [
-        { name: 'CHANGE PASSWORD', link: '/Change-password' },
-      ],
+      name: "Account",
+      link: "#",
+      dropdown: [{ name: "CHANGE PASSWORD", link: "/Change-password" }],
     },
     {
-      name: 'Online Services',
-      link: '#',
+      name: "Online Services",
+      link: "#",
       dropdown: [
-        { name: 'CLAIM (FORM-31,19,10C&10D)', link: '/claim' },
-        { name: 'ONE MEMBER - ONE EPF ACCOUNT (TRANSFER REQUEST)', link: '/epf-transfer' },
-        { name: 'TRACK CLAIM STATUS', link: '/claim-status' },
-        { name: 'DOWNLOAD ANNEXURE K', link: '/annexure-k' },
+        { name: "CLAIM (FORM-31,19,10C&10D)", link: "/claim" },
+        {
+          name: "ONE MEMBER - ONE EPF ACCOUNT (TRANSFER REQUEST)",
+          link: "/epf-transfer",
+        },
+        { name: "TRACK CLAIM STATUS", link: "/claim-status" },
+        { name: "DOWNLOAD ANNEXURE K", link: "/annexure-k" },
       ],
     },
-    
   ];
- 
+
   return (
     <nav className="bg-teal-600 p-3 shadow-md fixed w-full">
       <div className="container mx-auto flex items-center justify-start">
@@ -88,5 +88,5 @@ const NavBar = () => {
     </nav>
   );
 };
- 
+
 export default NavBar;
