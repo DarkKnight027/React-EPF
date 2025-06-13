@@ -19,6 +19,7 @@ import Claim from "./components/OnlineService/Claim/Claim";
 import MarkExit from "./components/Manage/MarkExit/MarkExit";
 import TrackClaimStatus from "./components/OnlineService/TrackClaimStatus/TrackClaimStatus";
 import Annexure from "./components/OnlineService/Annexure/Annexure";
+import ServiceHistory from "./view/serviceHistory/ServiceHistory";
 
 function App() {
   return (
@@ -34,12 +35,22 @@ function App() {
               </>
             }
           />
-           <Route path="/login" element={<><Header /><LoginForm/><Footer /></>} />
+          <Route
+            path="/login"
+            element={
+              <>
+                <Header />
+                <LoginForm />
+                <Footer />
+              </>
+            }
+          />
           <Route
             path="/Change-password"
             element={
               <>
-                <Header /><NavBar /> <ChangePassword />
+                <Header />
+                <NavBar /> <ChangePassword />
                 <Footer />
               </>
             }
@@ -48,7 +59,8 @@ function App() {
             path="/claim"
             element={
               <>
-                <Header /><NavBar /> <Claim />
+                <Header />
+                <NavBar /> <Claim />
                 <Footer />
               </>
             }
@@ -57,7 +69,8 @@ function App() {
             path="/mark-exit"
             element={
               <>
-                <Header /><NavBar/> <MarkExit />
+                <Header />
+                <NavBar /> <MarkExit />
                 <Footer />
               </>
             }
@@ -66,7 +79,8 @@ function App() {
             path="/claim-status"
             element={
               <>
-                <Header /><NavBar /> <TrackClaimStatus />
+                <Header />
+                <NavBar /> <TrackClaimStatus />
                 <Footer />
               </>
             }
@@ -75,7 +89,8 @@ function App() {
             path="/annexure-k"
             element={
               <>
-                <Header /><NavBar /> <Annexure />
+                <Header />
+                <NavBar /> <Annexure />
                 <Footer />
               </>
             }
@@ -84,7 +99,8 @@ function App() {
             path="contact-details"
             element={
               <>
-                <Header /><NavBar/>
+                <Header />
+                <NavBar />
                 <ChangeContactDetails />
                 <Footer />{" "}
               </>
@@ -135,7 +151,8 @@ function App() {
             element={
               <>
                 <Header />
-                <Passbook />
+                <NavBar />
+                <ServiceHistory />
                 <Footer />
               </>
             }
@@ -145,6 +162,7 @@ function App() {
             element={
               <>
                 <Header />
+                <NavBar />
                 <UANCard />
                 <Footer />
               </>
@@ -155,6 +173,7 @@ function App() {
             element={
               <>
                 <Header />
+                <NavBar />
                 <Passbook />
                 <Footer />
               </>
