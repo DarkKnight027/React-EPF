@@ -7,6 +7,19 @@
     "ifsc": "REACT0050083",
     "aadhaar": "XXXX XXXX 1234"
   },
+  "employment": [
+    {
+      "employeeName": "Prajwal Nayak",
+      "company": "CodeVerse Pvt Ltd",
+      "dateOfLeaving": "2024-10-30"
+    }
+  ],
+  "history": [
+    {
+      "date": "2024-10-30",
+      "status": "Marked exit by admin"
+    }
+  ],
   "claimStatus": [
     {
       "trackingId": "20250601012345001",

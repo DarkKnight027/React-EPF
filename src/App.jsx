@@ -57,7 +57,7 @@ function App() {
             path="/mark-exit"
             element={
               <>
-                <Header /> <MarkExit />
+                <Header /><NavBar/> <MarkExit />
                 <Footer />
               </>
             }
@@ -84,7 +84,7 @@ function App() {
             path="contact-details"
             element={
               <>
-                <Header />
+                <Header /><NavBar/>
                 <ChangeContactDetails />
                 <Footer />{" "}
               </>
