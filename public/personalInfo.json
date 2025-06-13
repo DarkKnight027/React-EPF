@@ -1,9 +1,23 @@
 {
+  "personal": {
     "name": "Team React",
     "mobile": "9876543210",
     "email": "reactXXXX@gmail.com",
     "bankAccount": "1234567XXXX",
     "ifsc": "REACT0050083",
     "aadhaar": "XXXX XXXX 1234"
-  }
-  
+  },
+  "employment": [
+    {
+      "employeeName": "Prajwal Nayak",
+      "company": "CodeVerse Pvt Ltd",
+      "dateOfLeaving": "2024-10-30"
+    }
+  ],
+  "history": [
+    {
+      "date": "2024-10-30",
+      "status": "Marked exit by admin"
+    }
+  ]
+}
