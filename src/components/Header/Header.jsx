@@ -12,11 +12,11 @@ const Header = () => {
  
  
  
-  const handleLogout = () => {1``
-    dispatch(logout());
-     navigate("/"); 
+const handleLogout = () => {
+  dispatch(logout());
+  navigate("/login"); // ✅ Go to login form after logout
+};
 
-  };
  
 
   return (

@@ -18,15 +18,17 @@ export default function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (uan !== storedUan || password !== storedPassword) {
-      toast.error("Invalid UAN or Password");
-    } else {
-      toast.success("Login successful!");
-       setTimeout(() => {
-      navigate("/home"); // Replace with your actual route
-      dispatch(login());
-    }, 2000);
-    }
+   // LoginForm.js (inside handleSubmit)
+if (uan !== storedUan || password !== storedPassword) {
+  toast.error("Invalid UAN or Password");
+} else {
+  toast.success("Login successful!");
+  setTimeout(() => {
+    dispatch(login({ uan, username: 'King', password })); // ✅ Send user data
+    navigate("/home");
+  }, 2000);
+}
+
   };
 
   return (
