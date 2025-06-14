@@ -23,187 +23,167 @@ import ServiceHistory from "./view/serviceHistory/ServiceHistory";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Header /> <LoginForm />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <>
-                <Header />
-                <LoginForm />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/Change-password"
-            element={
-              <>
-                <Header />
-                <NavBar /> <ChangePassword />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/claim"
-            element={
-              <>
-                <Header />
-                <NavBar /> <Claim />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/mark-exit"
-            element={
-              <>
-                <Header />
-                <NavBar /> <MarkExit />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/claim-status"
-            element={
-              <>
-                <Header />
-                <NavBar /> <TrackClaimStatus />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/annexure-k"
-            element={
-              <>
-                <Header />
-                <NavBar /> <Annexure />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="contact-details"
-            element={
-              <>
-                <Header />
-                <NavBar />
-                <ChangeContactDetails />
-                <Footer />{" "}
-              </>
-            }
-          />
-          <Route
-            path="/home"
-            element={
-              <>
-                <Header />
-                <NavBar />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/kyc"
-            element={
-              <>
-                <Header />
-                <NavBar />
-                <Kyc />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/epf-transfer"
-            element={
-              <>
-                <CollapsiblePage />
-              </>
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <>
-                <Header />
-                <NavBar />
-                <Profile />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/service-history"
-            element={
-              <>
-                <Header />
-                <NavBar />
-                <ServiceHistory />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/uan-card"
-            element={
-              <>
-                <Header />
-                <NavBar />
-                <UANCard />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/Passbook"
-            element={
-              <>
-                <Header />
-                <NavBar />
-                <Passbook />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/e-nomination"
-            element={
-              <>
-                <Header />
-                <NavBar />
-                <ENomaination />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/joint-declaration"
-            element={
-              <>
-                <Header />
-                <NavBar />
-                <JointDeclaration />
-                <Footer />
-              </>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <LoginForm />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <>
+              <LoginForm />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/Change-password"
+          element={
+            <>
+              <NavBar /> <ChangePassword />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/claim"
+          element={
+            <>
+              <NavBar /> <Claim />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/mark-exit"
+          element={
+            <>
+              <NavBar /> <MarkExit />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/claim-status"
+          element={
+            <>
+              <NavBar /> <TrackClaimStatus />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/annexure-k"
+          element={
+            <>
+              <NavBar /> <Annexure />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/contact-details"
+          element={
+            <>
+              <NavBar />
+              <ChangeContactDetails />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <>
+              <NavBar />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/kyc"
+          element={
+            <>
+              <NavBar />
+              <Kyc />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/epf-transfer"
+          element={<CollapsiblePage />}
+        />
+        <Route
+          path="/profile"
+          element={
+            <>
+              <NavBar />
+              <Profile />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/service-history"
+          element={
+            <>
+              <NavBar />
+              <ServiceHistory />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/uan-card"
+          element={
+            <>
+              <NavBar />
+              <UANCard />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/Passbook"
+          element={
+            <>
+              <NavBar />
+              <Passbook />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/e-nomination"
+          element={
+            <>
+              <NavBar />
+              <ENomaination />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/joint-declaration"
+          element={
+            <>
+              <NavBar />
+              <JointDeclaration />
+              <Footer />
+            </>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

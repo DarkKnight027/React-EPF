@@ -11,7 +11,6 @@ import Footer from "../../Footer/Footer";
 const CollapsiblePage = () => {
   return (
     <>
-      <Header />
       <NavBar />
       <div className="pt-20 min-h-screen bg-gray-50 p-4">
         <CollapsibleBox title="Instructions" sectionKey="instructions">
